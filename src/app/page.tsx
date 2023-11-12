@@ -1,11 +1,12 @@
 "use client";
 
+import { Header } from "./components/Header";
 import * as S from "./styles";
 
 export default function Home() {
     return (
         <S.Container>
-            <p>Home</p>
+            <Header />
         </S.Container>
     );
 }
