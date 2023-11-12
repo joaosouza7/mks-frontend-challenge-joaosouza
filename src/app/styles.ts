@@ -103,3 +103,57 @@ export const ProductButton = styled.div`
     background-size: 400% 400%;
     animation: ${loading} 1.2s ease-in-out infinite;
 `;
+
+/**** */
+
+export const Header = styled.div`
+    width: 100%;
+    height: 101px;
+    cursor: progress;
+
+    background: linear-gradient(
+        -90deg,
+        #91aab4 0%,
+        ${lighten(0.2, "#91aab4")} 50%,
+        #91aab4 100%
+    );
+    background-size: 400% 400%;
+    animation: ${loading} 1.2s ease-in-out infinite;
+
+    padding: 0 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const Logo = styled.div`
+    background-color: red;
+    width: 220px;
+    height: 60px;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        -90deg,
+        #b3c5cc 0%,
+        ${lighten(0.2, "#b3c5cc")} 50%,
+        #b3c5cc 100%
+    );
+    background-size: 400% 400%;
+    animation: ${loading} 1.2s ease-in-out infinite;
+`;
+export const CartArea = styled.div`
+    background-color: gold;
+    height: 45px;
+    width: 90px;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        -90deg,
+        #b3c5cc 0%,
+        ${lighten(0.2, "#b3c5cc")} 50%,
+        #b3c5cc 100%
+    );
+    background-size: 400% 400%;
+    animation: ${loading} 1.2s ease-in-out infinite;
+`;
