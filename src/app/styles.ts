@@ -157,3 +157,19 @@ export const CartArea = styled.div`
     background-size: 400% 400%;
     animation: ${loading} 1.2s ease-in-out infinite;
 `;
+
+export const Footer = styled.div`
+    width: 100%;
+    height: 34px;
+
+    cursor: progress;
+
+    background: linear-gradient(
+        -90deg,
+        #91aab4 0%,
+        ${lighten(0.2, "#91aab4")} 50%,
+        #91aab4 100%
+    );
+    background-size: 400% 400%;
+    animation: ${loading} 1.2s ease-in-out infinite;
+`;
