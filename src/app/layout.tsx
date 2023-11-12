@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Header } from "./components/ui/Header";
+import Footer from "./components/ui/Footer";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
                 >
                     <Header />
                     <div style={{ flex: "1 1 0%" }}>{children}</div>
+                    <Footer />
                 </div>
             </body>
         </html>
