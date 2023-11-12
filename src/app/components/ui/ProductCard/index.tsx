@@ -31,7 +31,7 @@ export function ProductCard() {
                     Redesigned from scratch and completely revised.
                 </Description>
             </InfoArea>
-            <BuyButton icon={<ShoppingBag size={13} />} qtdProducts="Comprar" />
+            <BuyButton icon={<ShoppingBag size={13} />} text="Comprar" />
         </Card>
     );
 }

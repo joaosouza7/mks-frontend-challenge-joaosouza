@@ -68,22 +68,3 @@ export const Description = styled.span`
     font-weight: 300;
     line-height: 12px;
 `;
-
-export const Button = styled.button`
-    border-radius: 0px 0px 8px 8px;
-    background: #0f52ba;
-    color: #fff;
-    border: 0;
-
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-
-    width: 100%;
-    height: 31px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-`;

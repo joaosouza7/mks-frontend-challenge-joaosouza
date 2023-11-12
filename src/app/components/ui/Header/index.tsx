@@ -1,3 +1,5 @@
+"use client";
+
 import { ShoppingCart } from "lucide-react";
 import { CartButton } from "../CartButton";
 import * as S from "./styles";
@@ -5,10 +7,10 @@ import * as S from "./styles";
 export function Header() {
     return (
         <S.Header>
-            <S.LogoArea>
+            <S.Logo>
                 <S.HeadingH2>Mks</S.HeadingH2>
                 <S.HeadingP>Sistemas</S.HeadingP>
-            </S.LogoArea>
+            </S.Logo>
 
             <CartButton icon={<ShoppingCart />} qtdProducts="0" />
         </S.Header>

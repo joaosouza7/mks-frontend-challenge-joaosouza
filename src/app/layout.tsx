@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Header } from "./components/ui/Header";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -18,8 +19,19 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <body className={montserrat.className}>{children}</body>
+        <html lang="pt-BR">
+            <body className={montserrat.className}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "100%",
+                    }}
+                >
+                    <Header />
+                    <div style={{ flex: "1 1 0%" }}>{children}</div>
+                </div>
+            </body>
         </html>
     );
 }

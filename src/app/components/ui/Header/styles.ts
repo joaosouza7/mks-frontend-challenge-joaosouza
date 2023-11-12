@@ -11,9 +11,9 @@ export const Header = styled.header`
     justify-content: space-between;
 `;
 
-export const LogoArea = styled.div`
+export const Logo = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 10px;
 
     color: #ffffff;
@@ -31,30 +31,4 @@ export const HeadingP = styled.p`
     font-size: 20px;
     font-weight: 300;
     line-height: 19px;
-`;
-
-/****/
-
-export const CartArea = styled.button`
-    background-color: #ffffff;
-    height: 45px;
-    width: 90px;
-    border-radius: 8px;
-    border: 0;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-`;
-
-export const Icon = styled.span`
-    font-size: 18px;
-    color: #000000;
-`;
-
-export const Text = styled.span`
-    font-weight: 700;
-    font-size: 18px;
 `;
