@@ -1,21 +1,22 @@
 import * as S from "../Header/styles";
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import { Button } from "../ProductCard/styles";
 
 export type ButtonProps = {
     icon: ReactNode;
     qtdProducts: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function CartButton({
+export function BuyButton({
     type = "button",
     icon,
     qtdProducts,
     ...rest
 }: ButtonProps) {
     return (
-        <S.CartArea type={type} {...rest}>
-            {icon && <S.Icon>{icon}</S.Icon>}
+        <Button type={type} {...rest}>
+            {icon && icon}
             <S.Text>{qtdProducts}</S.Text>
-        </S.CartArea>
+        </Button>
     );
 }

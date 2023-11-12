@@ -173,3 +173,13 @@ export const Footer = styled.div`
     background-size: 400% 400%;
     animation: ${loading} 1.2s ease-in-out infinite;
 `;
+
+export const GridArea = styled.div`
+    width: 100%;
+    max-width: 938px;
+
+    margin: 116px 0 172px 0;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+`;
