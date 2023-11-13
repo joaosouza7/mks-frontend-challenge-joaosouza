@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 
-export const ButtonsContainer = styled.div`
+interface MyComponentProps {
+    theme: DefaultTheme;
+}
+
+export const ButtonsContainer = styled.div<MyComponentProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,12 +14,24 @@ export const ButtonsContainer = styled.div`
     border: 0.3px solid #bfbfbf;
     width: 100%;
     margin-top: 4px;
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            max-width: 100px;
+        }
+    `}
 `;
-export const Text = styled.span`
+export const Text = styled.span<MyComponentProps>`
     color: #000;
 
     font-size: 8px;
     font-weight: 400;
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            display: none;
+        }
+    `}
 `;
 export const Button = styled.button`
     border: 0;
