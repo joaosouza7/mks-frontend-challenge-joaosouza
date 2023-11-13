@@ -1,9 +1,13 @@
-import styled, { css } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { SidebarProps } from ".";
 
 type SideProps = Pick<SidebarProps, "menuIsVisible">;
 
-export const Sidebar = styled.section<SideProps>`
+interface MyComponentProps extends SideProps {
+    theme: DefaultTheme;
+}
+
+export const Sidebar = styled.section<MyComponentProps>`
     position: fixed;
     overflow-y: auto;
     z-index: 5;
@@ -46,6 +50,12 @@ export const Sidebar = styled.section<SideProps>`
             pointer-events: auto;
             transform: translateX(0);
         `}
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            max-width: 330px;
+        }
+    `}
 `;
 
 export const SidebarHeader = styled.div`
