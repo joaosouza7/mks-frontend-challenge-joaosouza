@@ -23,7 +23,7 @@ export function ProductCard({ product }: Props) {
     const { addProductToCart } = useContext(CartContext);
 
     function handleAddToCartClick() {
-        addProductToCart({ ...product, quantity: 0 });
+        addProductToCart({ ...product, quantity: 1 });
     }
 
     return (
