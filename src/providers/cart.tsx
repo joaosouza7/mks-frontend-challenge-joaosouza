@@ -1,15 +1,18 @@
 "use client";
 
 import { Product } from "@/app/page";
-import { ReactNode, createContext, useState } from "react";
+import { ProductWithTotalPrice } from "@/helpers/product";
+import { ReactNode, createContext, useMemo, useState } from "react";
 
-export interface CartProduct extends Product {
+export interface CartProduct extends ProductWithTotalPrice {
     quantity: number;
+    totalPrice: number;
 }
 
 interface ICartContext {
     products: CartProduct[];
     cartTotalPrice: number;
+    total: number;
     addProductToCart: (product: CartProduct) => void;
     decreaseProductQuantity: (productId: number) => void;
     increaseProductQuantity: (productId: number) => void;
@@ -19,6 +22,7 @@ interface ICartContext {
 export const CartContext = createContext<ICartContext>({
     products: [],
     cartTotalPrice: 0,
+    total: 0,
     addProductToCart: () => {},
     decreaseProductQuantity: () => {},
     increaseProductQuantity: () => {},
@@ -27,6 +31,12 @@ export const CartContext = createContext<ICartContext>({
 
 export default function CartProvider({ children }: { children: ReactNode }) {
     const [products, setProducts] = useState<CartProduct[]>([]);
+
+    const total = useMemo(() => {
+        return products.reduce((acc, product) => {
+            return acc + Number(product.price) * product.quantity;
+        }, 0);
+    }, [products]);
 
     const addProductToCart = (product: CartProduct) => {
         // Se o produto ja estiver no carrinho, apenas aumente a quantidade
@@ -110,6 +120,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
                 increaseProductQuantity,
                 removeProductFromCart,
                 cartTotalPrice: 0,
+                total,
             }}
         >
             {children}

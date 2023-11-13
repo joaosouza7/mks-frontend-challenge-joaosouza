@@ -15,7 +15,7 @@ export default function Sidebar({
     menuIsVisible,
     setMenuIsVisible,
 }: SidebarProps) {
-    const { products } = useContext(CartContext);
+    const { products, total } = useContext(CartContext);
 
     return (
         <S.Sidebar menuIsVisible={menuIsVisible}>
@@ -29,15 +29,19 @@ export default function Sidebar({
             </S.SidebarHeader>
 
             <S.SidebarContent>
-                {products.map((product) => (
-                    <CartItem key={product.id} product={product} />
-                ))}
+                {products.length > 0 ? (
+                    products.map((product) => (
+                        <CartItem key={product.id} product={product} />
+                    ))
+                ) : (
+                    <S.Text>Carrinho vazio.</S.Text>
+                )}
             </S.SidebarContent>
 
             <S.SidebarFooter>
                 <S.ProductsPrice>
                     <S.Text>Total:</S.Text>
-                    <S.Text>R$798</S.Text>
+                    <S.Text>R${total.toFixed(0)}</S.Text>
                 </S.ProductsPrice>
 
                 <S.SidebarButton>
