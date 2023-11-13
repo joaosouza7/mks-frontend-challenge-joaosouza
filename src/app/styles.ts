@@ -1,8 +1,9 @@
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const GridArea = styled.div`
     width: 100%;
     max-width: 938px;
+    gap: 22px;
 
     margin: 116px 0 172px 0;
     display: grid;
@@ -10,9 +11,9 @@ export const GridArea = styled.div`
     grid-template-columns: repeat(4, 1fr);
 `;
 
-export const ContainerMax = styled.div`
+export const Container = styled.div`
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 `;

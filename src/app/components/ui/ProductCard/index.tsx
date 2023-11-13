@@ -6,30 +6,35 @@ import {
     ImgArea,
     InfoArea,
     Name,
+    Photo,
     Price,
 } from "./styles";
 import { BuyButton } from "../BuyButton";
 import { ShoppingBag } from "lucide-react";
+import { Product } from "@/app/page";
 
-export function ProductCard() {
+type Props = {
+    product: Product;
+};
+
+export function ProductCard({ product }: Props) {
     return (
         <Card>
             <ImgArea>
-                <Image
-                    src="/apple-watch.png"
-                    alt="Product"
+                <Photo
+                    src={product.photo}
+                    alt={product.name}
                     width={111}
                     height={138}
+                    sizes="100vw"
                 />
             </ImgArea>
             <InfoArea>
                 <HeadingArea>
-                    <Name>Apple Watch Series 4 GPS</Name>
-                    <Price>R$399</Price>
+                    <Name>{product.name}</Name>
+                    <Price>R${Number(product.price).toFixed(0)}</Price>
                 </HeadingArea>
-                <Description>
-                    Redesigned from scratch and completely revised.
-                </Description>
+                <Description>{product.description}</Description>
             </InfoArea>
             <BuyButton icon={<ShoppingBag size={13} />} text="Comprar" />
         </Card>

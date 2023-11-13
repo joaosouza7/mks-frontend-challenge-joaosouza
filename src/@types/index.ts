@@ -5,3 +5,11 @@ export type ButtonProps = {
     qtdProducts?: string;
     text?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
+
+export const queryClientOptions = {
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+        },
+    },
+};

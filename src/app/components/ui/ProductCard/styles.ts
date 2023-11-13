@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export const Card = styled.div`
@@ -7,21 +8,31 @@ export const Card = styled.div`
     width: 100%;
     max-width: 217px;
 
-    height: auto;
+    height: 100%;
     max-height: 285px;
     border-radius: 8px;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 50px 0%;
+    position: relative;
 `;
 
 export const ImgArea = styled.div`
     width: 100%;
-    padding: 18px 14px 14px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    aspect-ratio: 1 / 1;
+`;
 
-    text-align: center;
+export const Photo = styled(Image)`
+    height: auto;
+    max-height: 138px;
+
+    width: auto;
+    max-width: 111px;
+    object-fit: contain;
 `;
 
 export const InfoArea = styled.div`
