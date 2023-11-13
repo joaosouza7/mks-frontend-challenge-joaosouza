@@ -18,4 +18,5 @@ export const CardButton = styled.button`
     align-items: center;
     justify-content: center;
     gap: 14px;
+    cursor: pointer;
 `;

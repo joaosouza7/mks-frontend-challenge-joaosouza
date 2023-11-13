@@ -4,7 +4,11 @@ import { ShoppingCart } from "lucide-react";
 import { CartButton } from "../CartButton";
 import * as S from "./styles";
 
-export function Header() {
+interface HeaderProps {
+    setMenuIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export function Header({ setMenuIsVisible }: HeaderProps) {
     return (
         <S.Header>
             <S.Logo>
@@ -12,7 +16,11 @@ export function Header() {
                 <S.HeadingP>Sistemas</S.HeadingP>
             </S.Logo>
 
-            <CartButton icon={<ShoppingCart />} qtdProducts="0" />
+            <CartButton
+                icon={<ShoppingCart />}
+                qtdProducts="0"
+                onClick={() => setMenuIsVisible(true)}
+            />
         </S.Header>
     );
 }

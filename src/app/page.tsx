@@ -9,6 +9,7 @@ import { ProductCard } from "./components/ui/ProductCard";
 import * as S from "./styles";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
+import { Header } from "./components/ui/Header";
 
 export type Product = {
     id: number;
@@ -32,7 +33,7 @@ const getProducts = async () => {
 };
 
 export default function Home() {
-    const [menuIsVisible, setMenuIsVisible] = useState(true);
+    const [menuIsVisible, setMenuIsVisible] = useState(false);
 
     const { data, isLoading } = useQuery({
         queryKey: ["products"],
@@ -46,6 +47,7 @@ export default function Home() {
                 setMenuIsVisible={setMenuIsVisible}
             />
 
+            <Header setMenuIsVisible={setMenuIsVisible} />
             {isLoading ? (
                 <ProductsSkeleton />
             ) : (

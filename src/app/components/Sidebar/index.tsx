@@ -1,11 +1,12 @@
 import { XCircleIcon } from "lucide-react";
 import * as S from "./styles";
-import ProductItem from "../ProductItem";
+import ProductItem from "../CartItem";
 import { Product } from "@/app/page";
 import { CartContext } from "@/providers/cart";
 import { useContext } from "react";
+import CartItem from "../CartItem";
 
-interface SidebarProps {
+export interface SidebarProps {
     menuIsVisible: boolean;
     setMenuIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -17,15 +18,19 @@ export default function Sidebar({
     const { products } = useContext(CartContext);
 
     return (
-        <S.Sidebar>
+        <S.Sidebar menuIsVisible={menuIsVisible}>
             <S.SidebarHeader>
                 <S.Title>Carrinho de Compras</S.Title>
-                <XCircleIcon size={25} cursor="pointer" />
+                <XCircleIcon
+                    size={25}
+                    cursor="pointer"
+                    onClick={() => setMenuIsVisible(false)}
+                />
             </S.SidebarHeader>
 
             <S.SidebarContent>
                 {products.map((product) => (
-                    <h1 key={product.id}>{product.name}</h1>
+                    <CartItem key={product.id} product={product} />
                 ))}
             </S.SidebarContent>
 
