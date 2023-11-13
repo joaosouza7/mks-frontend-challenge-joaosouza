@@ -3,12 +3,16 @@
 import { ShoppingCart } from "lucide-react";
 import { CartButton } from "../CartButton";
 import * as S from "./styles";
+import { useContext } from "react";
+import { CartContext } from "@/providers/cart";
 
 interface HeaderProps {
     setMenuIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function Header({ setMenuIsVisible }: HeaderProps) {
+    const { qtdProducts } = useContext(CartContext);
+
     return (
         <S.Header>
             <S.Logo>
@@ -18,7 +22,7 @@ export function Header({ setMenuIsVisible }: HeaderProps) {
 
             <CartButton
                 icon={<ShoppingCart />}
-                qtdProducts="0"
+                qtdProducts={String(qtdProducts)}
                 onClick={() => setMenuIsVisible(true)}
             />
         </S.Header>
