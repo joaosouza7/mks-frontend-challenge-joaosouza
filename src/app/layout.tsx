@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Header } from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
+import { Providers } from "@/providers/query";
+import StyledComponentsRegistry from "./registry";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -21,19 +23,23 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-BR">
-            <body className={montserrat.className}>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        height: "100%",
-                    }}
-                >
-                    <Header />
-                    <div style={{ flex: "1 1 0%" }}>{children}</div>
-                    <Footer />
-                </div>
-            </body>
+            <StyledComponentsRegistry>
+                <body className={montserrat.className}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                        }}
+                    >
+                        <Providers>
+                            <Header />
+                            <div style={{ flex: "1 1 0%" }}>{children}</div>
+                            <Footer />
+                        </Providers>
+                    </div>
+                </body>
+            </StyledComponentsRegistry>
         </html>
     );
 }
