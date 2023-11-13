@@ -2,14 +2,21 @@ import { Product } from "@/app/page";
 import { XCircle } from "lucide-react";
 import Image from "next/image";
 import * as S from "./styles";
-import { CartProduct } from "@/providers/cart";
+import { CartContext, CartProduct } from "@/providers/cart";
 import CartButtons from "../ui/CartButtons";
+import { useContext } from "react";
 
 interface CartItemProps {
     product: CartProduct;
 }
 
 export default function CartItem({ product }: CartItemProps) {
+    const { removeProductFromCart } = useContext(CartContext);
+
+    function handleRemoveProductClick() {
+        removeProductFromCart(product.id);
+    }
+
     return (
         <>
             <S.ContainerProduct>
@@ -32,7 +39,11 @@ export default function CartItem({ product }: CartItemProps) {
                     <S.Price>R${Number(product.price).toFixed(0)}</S.Price>
                 </S.PriceArea>
 
-                <S.Icon size={25} color="#000" />
+                <S.Icon
+                    size={25}
+                    color="#000"
+                    onClick={handleRemoveProductClick}
+                />
             </S.ContainerProduct>
         </>
     );
