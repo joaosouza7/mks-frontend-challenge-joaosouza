@@ -25,7 +25,10 @@ export default function CartItem({ product }: CartItemProps) {
                 </S.ProductInfo>
 
                 <S.PriceArea>
-                    <CartButtons qtd={product.quantity} />
+                    <CartButtons
+                        qtd={product.quantity}
+                        productId={product.id}
+                    />
                     <S.Price>R${Number(product.price).toFixed(0)}</S.Price>
                 </S.PriceArea>
 

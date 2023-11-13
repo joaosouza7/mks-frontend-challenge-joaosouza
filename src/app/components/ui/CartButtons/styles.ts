@@ -28,6 +28,7 @@ export const Button = styled.button`
 
     font-size: 12px;
     font-weight: 400;
+    cursor: pointer;
 `;
 export const Qtd = styled.span`
     color: #000;
