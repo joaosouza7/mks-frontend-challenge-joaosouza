@@ -8,10 +8,15 @@ interface CartButtonsProps {
 }
 
 export default function CartButtons({ productId, qtd }: CartButtonsProps) {
-    const { decreaseProductQuantity } = useContext(CartContext);
+    const { decreaseProductQuantity, increaseProductQuantity } =
+        useContext(CartContext);
 
     function handleDecreaseProductQuantityClick() {
         decreaseProductQuantity(productId);
+    }
+
+    function handleIncreaseProductQuantityClick() {
+        increaseProductQuantity(productId);
     }
 
     return (
@@ -23,7 +28,9 @@ export default function CartButtons({ productId, qtd }: CartButtonsProps) {
                         -
                     </S.Button>
                     <S.Qtd>{qtd}</S.Qtd>
-                    <S.Button>+</S.Button>
+                    <S.Button onClick={handleIncreaseProductQuantityClick}>
+                        +
+                    </S.Button>
                 </S.ButtonsContainer>
             </div>
         </>
