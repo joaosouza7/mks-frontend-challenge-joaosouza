@@ -18,6 +18,7 @@ export const ButtonsContainer = styled.div<MyComponentProps>`
     ${({ theme }) => css`
         @media (max-width: ${theme.breakpoints.medium}px) {
             max-width: 100px;
+            height: 30px;
         }
     `}
 `;
@@ -45,6 +46,12 @@ export const Button = styled.button`
     font-size: 12px;
     font-weight: 400;
     cursor: pointer;
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            font-size: 20px;
+        }
+    `}
 `;
 export const Qtd = styled.span`
     color: #000;
@@ -57,4 +64,11 @@ export const Qtd = styled.span`
     justify-content: center;
     border-right: 0.2px solid #bfbfbf;
     border-left: 0.2px solid #bfbfbf;
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            font-size: 15px;
+            font-weight: 400;
+        }
+    `}
 `;

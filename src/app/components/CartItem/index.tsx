@@ -1,6 +1,3 @@
-import { Product } from "@/app/page";
-import { XCircle } from "lucide-react";
-import Image from "next/image";
 import * as S from "./styles";
 import { CartContext, CartProduct } from "@/providers/cart";
 import CartButtons from "../ui/CartButtons";
@@ -39,11 +36,7 @@ export default function CartItem({ product }: CartItemProps) {
                     <S.Price>R${Number(product.price).toFixed(0)}</S.Price>
                 </S.PriceArea>
 
-                <S.Icon
-                    size={25}
-                    color="#000"
-                    onClick={handleRemoveProductClick}
-                />
+                <S.Icon onClick={handleRemoveProductClick}>X</S.Icon>
             </S.ContainerProduct>
         </>
     );

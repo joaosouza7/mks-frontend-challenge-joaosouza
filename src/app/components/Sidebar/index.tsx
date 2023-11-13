@@ -1,7 +1,5 @@
-import { XCircleIcon } from "lucide-react";
+import { AiFillCloseCircle } from "react-icons/ai";
 import * as S from "./styles";
-import ProductItem from "../CartItem";
-import { Product } from "@/app/page";
 import { CartContext } from "@/providers/cart";
 import { useContext } from "react";
 import CartItem from "../CartItem";
@@ -21,11 +19,9 @@ export default function Sidebar({
         <S.Sidebar menuIsVisible={menuIsVisible}>
             <S.SidebarHeader>
                 <S.Title>Carrinho de Compras</S.Title>
-                <XCircleIcon
-                    size={25}
-                    cursor="pointer"
-                    onClick={() => setMenuIsVisible(false)}
-                />
+                <S.ButtonClose onClick={() => setMenuIsVisible(false)}>
+                    X
+                </S.ButtonClose>
             </S.SidebarHeader>
 
             <S.SidebarContent>

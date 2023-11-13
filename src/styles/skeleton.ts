@@ -86,10 +86,11 @@ export const CartArea = styled.div`
 
 /* --- PRODUCTS SKELETON STYLE --- */
 export const Container = styled.div`
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    padding: 0 2%;
 `;
 
 export const Grid = styled.div<MyComponentProps>`

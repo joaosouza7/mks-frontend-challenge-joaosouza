@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingCart } from "lucide-react";
+import { TiShoppingCart } from "react-icons/ti";
 import { CartButton } from "../CartButton";
 import * as S from "./styles";
 import { useContext } from "react";
@@ -21,7 +21,7 @@ export function Header({ setMenuIsVisible }: HeaderProps) {
             </S.Logo>
 
             <CartButton
-                icon={<ShoppingCart />}
+                icon={<TiShoppingCart />}
                 qtdProducts={String(qtdProducts)}
                 onClick={() => setMenuIsVisible(true)}
             />

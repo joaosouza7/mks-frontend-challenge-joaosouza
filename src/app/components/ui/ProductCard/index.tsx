@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
     Card,
     Description,
@@ -10,13 +9,12 @@ import {
     Price,
 } from "./styles";
 import { BuyButton } from "../BuyButton";
-import { ShoppingBag } from "lucide-react";
-import { Product } from "@/app/page";
-import { CartContext } from "@/providers/cart";
+import { LuShoppingBag } from "react-icons/lu";
+import { CartContext, CartProduct } from "@/providers/cart";
 import { useContext } from "react";
 
 type Props = {
-    product: Product;
+    product: CartProduct;
 };
 
 export function ProductCard({ product }: Props) {
@@ -45,7 +43,7 @@ export function ProductCard({ product }: Props) {
                 <Description>{product.description}</Description>
             </InfoArea>
             <BuyButton
-                icon={<ShoppingBag size={13} />}
+                icon={<LuShoppingBag size={15} />}
                 text="Comprar"
                 onClick={handleAddToCartClick}
             />

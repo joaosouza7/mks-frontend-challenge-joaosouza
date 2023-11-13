@@ -109,3 +109,18 @@ export const SidebarButton = styled.button`
     justify-content: center;
     padding: 40px 0;
 `;
+
+export const ButtonClose = styled.button`
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #000;
+
+    color: #fff;
+
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 15px;
+`;

@@ -1,4 +1,3 @@
-import { X, XCircle } from "lucide-react";
 import Image from "next/image";
 import styled, { DefaultTheme, css } from "styled-components";
 
@@ -116,19 +115,35 @@ export const Price = styled.span`
     `}
 `;
 
-export const Icon = styled(XCircle)`
+export const Icon = styled.button`
     margin-top: -90px;
     margin-right: -30px;
     z-index: 5;
+    width: 25px;
+    height: 25px;
+    background: #000;
+    color: #fff;
+
+    border: 0;
+    border-radius: 50%;
     cursor: pointer;
+    text-align: center;
 
     ${({ theme }) => css`
         @media (max-width: ${theme.breakpoints.medium}px) {
             margin-top: 0;
             margin-right: 0;
             position: absolute;
-            top: 5px;
-            right: 5px;
+
+            top: 9px;
+            right: 14px;
+
+            background: transparent;
+            color: #000;
+
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 17px;
         }
     `}
 `;
