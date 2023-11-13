@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 
-export const CartArea = styled.button`
+interface MyComponentProps {
+    theme: DefaultTheme;
+}
+
+export const CartArea = styled.button<MyComponentProps>`
     background-color: #ffffff;
     border: 0;
     border-radius: 8px;
@@ -13,6 +17,12 @@ export const CartArea = styled.button`
     align-items: center;
     justify-content: center;
     gap: 15px;
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            height: auto;
+        }
+    `}
 `;
 
 export const CartIcon = styled.span`
