@@ -36,7 +36,6 @@ export default function RootLayout({
                         <Providers>
                             <CartProvider>
                                 <div style={{ flex: "1 1 0%" }}>{children}</div>
-                                <Footer />
                             </CartProvider>
                         </Providers>
                     </div>

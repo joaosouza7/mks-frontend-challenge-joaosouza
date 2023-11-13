@@ -10,6 +10,9 @@ import * as S from "./styles";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import { Header } from "./components/ui/Header";
+import { HeaderSkeleton } from "./components/Skeleton/HeaderSkeleton";
+import FooterSkeleton from "./components/Skeleton/FooterSkeleton";
+import Footer from "./components/ui/Footer";
 
 export type Product = {
     id: number;
@@ -47,17 +50,27 @@ export default function Home() {
                 setMenuIsVisible={setMenuIsVisible}
             />
 
-            <Header setMenuIsVisible={setMenuIsVisible} />
             {isLoading ? (
-                <ProductsSkeleton />
+                <>
+                    <HeaderSkeleton />
+                    <ProductsSkeleton />
+                    <FooterSkeleton />
+                </>
             ) : (
-                <S.Container>
-                    <S.GridArea>
-                        {data?.products.map((product) => (
-                            <ProductCard key={product.id} product={product} />
-                        ))}
-                    </S.GridArea>
-                </S.Container>
+                <>
+                    <Header setMenuIsVisible={setMenuIsVisible} />
+                    <S.Container>
+                        <S.GridArea>
+                            {data?.products.map((product) => (
+                                <ProductCard
+                                    key={product.id}
+                                    product={product}
+                                />
+                            ))}
+                        </S.GridArea>
+                    </S.Container>
+                    <Footer />
+                </>
             )}
         </>
     );
