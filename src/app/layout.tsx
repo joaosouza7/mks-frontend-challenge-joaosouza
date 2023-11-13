@@ -5,6 +5,7 @@ import { Header } from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 import { Providers } from "@/providers/query";
 import StyledComponentsRegistry from "./registry";
+import CartProvider from "@/providers/cart";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -33,9 +34,11 @@ export default function RootLayout({
                         }}
                     >
                         <Providers>
-                            <Header />
-                            <div style={{ flex: "1 1 0%" }}>{children}</div>
-                            <Footer />
+                            <CartProvider>
+                                <Header />
+                                <div style={{ flex: "1 1 0%" }}>{children}</div>
+                                <Footer />
+                            </CartProvider>
                         </Providers>
                     </div>
                 </body>
