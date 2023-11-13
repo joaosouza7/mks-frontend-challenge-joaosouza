@@ -1,9 +1,12 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { DefaultTheme, css, keyframes } from "styled-components";
 import { lighten } from "polished";
 import { SkeletonProps } from "@/app/components/Skeleton/ProductsSkeleton";
 
 type GridProps = Pick<SkeletonProps, "spacings">;
 type ContentProps = Pick<SkeletonProps, "height">;
+interface MyComponentProps extends GridProps {
+    theme: DefaultTheme;
+}
 
 /** -- LOADING ANIMATION -- */
 const loading = keyframes`
@@ -35,6 +38,12 @@ export const Header = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            height: 50px;
+        }
+    `}
 `;
 
 export const Logo = styled.div`
@@ -51,6 +60,12 @@ export const Logo = styled.div`
     );
     background-size: 400% 400%;
     animation: ${loading} 1.2s ease-in-out infinite;
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            width: 142px;
+            height: 43px;
+    `}
 `;
 
 export const CartArea = styled.div`
@@ -77,7 +92,7 @@ export const Container = styled.div`
     justify-content: center;
 `;
 
-export const Grid = styled.div<GridProps>`
+export const Grid = styled.div<MyComponentProps>`
     ${({ spacings }) => css`
         width: 100%;
         max-width: 938px;
@@ -87,6 +102,19 @@ export const Grid = styled.div<GridProps>`
         display: grid;
         place-items: center;
         grid-template-columns: repeat(4, 1fr);
+    `}
+
+    ${({ theme }) => css`
+        @media (max-width: ${theme.breakpoints.medium}px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: ${theme.breakpoints.small}px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
     `}
 `;
 
