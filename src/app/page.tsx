@@ -7,6 +7,8 @@ import axios from "axios";
 import { ProductCard } from "./components/ui/ProductCard";
 
 import * as S from "./styles";
+import { useState } from "react";
+import Sidebar from "./components/Sidebar";
 
 export type Product = {
     id: number;
@@ -15,7 +17,6 @@ export type Product = {
     description: string;
     photo: string;
     price: string;
-    count: number;
 };
 
 export interface ProductList {
@@ -24,13 +25,15 @@ export interface ProductList {
 
 const getProducts = async () => {
     const response = await axios.get<ProductList>(
-        "https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=12&sortBy=id&orderBy=DESC"
+        "https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=DESC"
     );
 
     return response.data;
 };
 
 export default function Home() {
+    const [menuIsVisible, setMenuIsVisible] = useState(true);
+
     const { data, isLoading } = useQuery({
         queryKey: ["products"],
         queryFn: getProducts,
@@ -38,6 +41,11 @@ export default function Home() {
 
     return (
         <>
+            <Sidebar
+                menuIsVisible={menuIsVisible}
+                setMenuIsVisible={setMenuIsVisible}
+            />
+
             {isLoading ? (
                 <ProductsSkeleton />
             ) : (

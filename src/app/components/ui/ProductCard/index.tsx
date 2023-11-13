@@ -12,12 +12,20 @@ import {
 import { BuyButton } from "../BuyButton";
 import { ShoppingBag } from "lucide-react";
 import { Product } from "@/app/page";
+import { CartContext } from "@/providers/cart";
+import { useContext } from "react";
 
 type Props = {
     product: Product;
 };
 
 export function ProductCard({ product }: Props) {
+    const { addProductToCart } = useContext(CartContext);
+
+    function handleAddToCartClick() {
+        addProductToCart({ ...product, quantity: 0 });
+    }
+
     return (
         <Card>
             <ImgArea>
@@ -36,7 +44,11 @@ export function ProductCard({ product }: Props) {
                 </HeadingArea>
                 <Description>{product.description}</Description>
             </InfoArea>
-            <BuyButton icon={<ShoppingBag size={13} />} text="Comprar" />
+            <BuyButton
+                icon={<ShoppingBag size={13} />}
+                text="Comprar"
+                onClick={handleAddToCartClick}
+            />
         </Card>
     );
 }
