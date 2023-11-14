@@ -4,28 +4,16 @@ import { useQuery } from "@tanstack/react-query";
 
 import { ProductsSkeleton } from "./components/Skeleton/ProductsSkeleton";
 import axios from "axios";
-import { ProductCard } from "./components/ui/ProductCard";
+import { ProductCard } from "./components/ProductCard";
 
 import * as S from "./styles";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
-import { Header } from "./components/ui/Header";
+import { Header } from "./components/Header";
 import { HeaderSkeleton } from "./components/Skeleton/HeaderSkeleton";
 import FooterSkeleton from "./components/Skeleton/FooterSkeleton";
-import Footer from "./components/ui/Footer";
-
-export type Product = {
-    id: number;
-    name: string;
-    brand: string;
-    description: string;
-    photo: string;
-    price: string;
-};
-
-export interface ProductList {
-    products: Product[];
-}
+import Footer from "./components/Footer";
+import { ProductList } from "@/@types";
 
 const getProducts = async () => {
     const response = await axios.get<ProductList>(

@@ -12,10 +12,10 @@ export function ProductsSkeleton({
     spacings = 22,
 }: SkeletonProps) {
     return (
-        <S.Container>
-            <S.Grid spacings={spacings}>
+        <S.Container role="main">
+            <S.Grid spacings={spacings} role="grid">
                 {[...Array(lines)].map((_, index) => (
-                    <S.Content key={index} height={height}>
+                    <S.Content key={index} height={height} role="list">
                         <S.ProductImage />
                         <S.ProductInfo />
                         <S.ProductButton />

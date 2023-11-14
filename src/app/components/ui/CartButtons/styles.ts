@@ -16,7 +16,7 @@ export const ButtonsContainer = styled.div<MyComponentProps>`
     margin-top: 4px;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             max-width: 100px;
             height: 30px;
         }
@@ -29,7 +29,7 @@ export const Text = styled.span<MyComponentProps>`
     font-weight: 400;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             display: none;
         }
     `}
@@ -48,7 +48,7 @@ export const Button = styled.button`
     cursor: pointer;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             font-size: 20px;
         }
     `}
@@ -66,7 +66,7 @@ export const Qtd = styled.span`
     border-left: 0.2px solid #bfbfbf;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             font-size: 15px;
             font-weight: 400;
         }

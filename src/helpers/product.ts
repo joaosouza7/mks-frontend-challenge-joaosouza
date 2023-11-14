@@ -1,5 +1,4 @@
-import { Product } from "@/app/page";
-
+import { Product } from "@/@types";
 export interface ProductWithTotalPrice extends Product {
     totalPrice: number;
 }

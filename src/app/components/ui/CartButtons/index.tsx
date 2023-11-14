@@ -21,7 +21,7 @@ export default function CartButtons({ productId, qtd }: CartButtonsProps) {
 
     return (
         <>
-            <div>
+            <div role="button">
                 <S.Text>Qtd:</S.Text>
                 <S.ButtonsContainer>
                     <S.Button onClick={handleDecreaseProductQuantityClick}>

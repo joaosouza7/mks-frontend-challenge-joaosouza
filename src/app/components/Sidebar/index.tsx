@@ -1,4 +1,3 @@
-import { AiFillCloseCircle } from "react-icons/ai";
 import * as S from "./styles";
 import { CartContext } from "@/providers/cart";
 import { useContext } from "react";
@@ -16,7 +15,7 @@ export default function Sidebar({
     const { products, total } = useContext(CartContext);
 
     return (
-        <S.Sidebar menuIsVisible={menuIsVisible}>
+        <S.Sidebar menuIsVisible={menuIsVisible} role="menu">
             <S.SidebarHeader>
                 <S.Title>Carrinho de Compras</S.Title>
                 <S.ButtonClose onClick={() => setMenuIsVisible(false)}>

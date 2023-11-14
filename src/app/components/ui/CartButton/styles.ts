@@ -19,7 +19,7 @@ export const CartArea = styled.button<MyComponentProps>`
     gap: 15px;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             height: auto;
         }
     `}

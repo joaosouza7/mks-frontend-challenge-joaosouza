@@ -8,7 +8,7 @@ import {
     Photo,
     Price,
 } from "./styles";
-import { BuyButton } from "../BuyButton";
+import { BuyButton } from "../ui/BuyButton";
 import { LuShoppingBag } from "react-icons/lu";
 import { CartContext, CartProduct } from "@/providers/cart";
 import { useContext } from "react";
@@ -25,9 +25,10 @@ export function ProductCard({ product }: Props) {
     }
 
     return (
-        <Card>
+        <Card role="main">
             <ImgArea>
                 <Photo
+                    role="img"
                     src={product.photo}
                     alt={product.name}
                     width={111}
@@ -46,6 +47,7 @@ export function ProductCard({ product }: Props) {
                 icon={<LuShoppingBag size={15} />}
                 text="Comprar"
                 onClick={handleAddToCartClick}
+                name="comprar"
             />
         </Card>
     );

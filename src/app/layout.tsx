@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Header } from "./components/ui/Header";
-import Footer from "./components/ui/Footer";
+import { Header } from "./components/Header";
+import Footer from "./components/Footer";
 import { Providers } from "@/providers/query";
 import StyledComponentsRegistry from "./registry";
 import CartProvider from "@/providers/cart";

@@ -52,7 +52,7 @@ export const Sidebar = styled.section<MyComponentProps>`
         `}
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             max-width: 330px;
         }
     `}

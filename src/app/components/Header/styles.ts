@@ -15,7 +15,7 @@ export const Header = styled.header<MyComponentProps>`
     justify-content: space-between;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             height: 50px;
         }
     `}
@@ -37,7 +37,7 @@ export const HeadingH2 = styled.h2<MyComponentProps>`
     text-transform: uppercase;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             font-size: 32px;
         }
     `}
@@ -49,7 +49,7 @@ export const HeadingP = styled.p<MyComponentProps>`
     line-height: 19px;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             font-size: 16px;
         }
     `}

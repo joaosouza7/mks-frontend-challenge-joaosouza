@@ -1,7 +1,7 @@
 "use client";
 
 import { TiShoppingCart } from "react-icons/ti";
-import { CartButton } from "../CartButton";
+import { CartButton } from "../ui/CartButton";
 import * as S from "./styles";
 import { useContext } from "react";
 import { CartContext } from "@/providers/cart";
@@ -14,7 +14,7 @@ export function Header({ setMenuIsVisible }: HeaderProps) {
     const { qtdProducts } = useContext(CartContext);
 
     return (
-        <S.Header>
+        <S.Header role="banner">
             <S.Logo>
                 <S.HeadingH2>Mks</S.HeadingH2>
                 <S.HeadingP>Sistemas</S.HeadingP>
@@ -24,6 +24,7 @@ export function Header({ setMenuIsVisible }: HeaderProps) {
                 icon={<TiShoppingCart />}
                 qtdProducts={String(qtdProducts)}
                 onClick={() => setMenuIsVisible(true)}
+                role="button"
             />
         </S.Header>
     );

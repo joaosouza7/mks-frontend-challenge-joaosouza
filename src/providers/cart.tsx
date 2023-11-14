@@ -1,6 +1,5 @@
 "use client";
 
-import { Product } from "@/app/page";
 import { ProductWithTotalPrice } from "@/helpers/product";
 import { ReactNode, createContext, useEffect, useMemo, useState } from "react";
 

@@ -40,7 +40,7 @@ export const Header = styled.div`
     justify-content: space-between;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             height: 50px;
         }
     `}
@@ -62,7 +62,7 @@ export const Logo = styled.div`
     animation: ${loading} 1.2s ease-in-out infinite;
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             width: 142px;
             height: 43px;
     `}
@@ -106,11 +106,11 @@ export const Grid = styled.div<MyComponentProps>`
     `}
 
     ${({ theme }) => css`
-        @media (max-width: ${theme.breakpoints.medium}px) {
+        @media (max-width: ${theme?.breakpoints?.medium}px) {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        @media (max-width: ${theme.breakpoints.small}px) {
+        @media (max-width: ${theme?.breakpoints?.small}px) {
             display: flex;
             align-items: center;
             justify-content: space-around;
